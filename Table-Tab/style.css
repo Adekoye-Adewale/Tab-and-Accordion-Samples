@@ -1,0 +1,104 @@
+*{
+    min-width: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 4rem 3.125%;
+    display: grid;
+    place-content: center;
+    gap: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+button{
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 10px 32px;
+    cursor: pointer;
+    color: #204885;
+    background-color: #fff;
+    border: solid 2px #204885;
+    transition: all 250ms ease-in-out;
+}
+button:hover{
+    color: #fff;
+    background-color: #204885;
+}
+.container__wrapper{
+    width: 100%;
+    max-width: 800px;
+    background-color: rgb(40, 100, 45);
+}
+.tab{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+}
+.tab__header{
+    height: 50px;
+}
+.container__wrapper__no__js .tab__content__container{
+    display: flex;
+}
+.tab__content__container{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 10px;
+    border: solid 2px #204885;
+}
+
+/* =====================
+===================== */
+/* ZERO JAVASCRIPT */
+/* =====================
+===================== */
+.container__wrapper__no__js__sec {
+    position: relative;
+    top: 150px;
+}
+.tab__header input, .container__wrapper__no__js .tab__content__container{
+    display: none;
+}
+.tab__header label{
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 10px 32px;
+    cursor: pointer;
+    color: #204885;
+    background-color: #fff;
+    border: solid 2px #204885;
+    transition: all 250ms ease-in-out;
+}
+.tab__header label:hover{
+    color: #fff;
+    background-color: #204885;
+}
+.container__wrapper__no__js .tab__wrap:has(input:checked) label{
+    color: #fff;
+    background-color: #204885;
+}
+.container__wrapper__no__js .tab__wrap:has(input:checked) .tab__content__container{
+    display: flex;
+}
+
+/* =====================
+===================== */
+/* WITH JAVASCRIPT */
+/* =====================
+===================== */
+
+.tab__content__container{
+    display: block;
+    width: 100%;
+}
+.container__wrapper__js .tab__content__container p{
+    display: none;
+}
