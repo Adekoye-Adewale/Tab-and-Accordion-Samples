@@ -1,6 +1,10 @@
+const firstTabWrap = document.querySelector('.tab__wrap');
+
+const content = document.querySelectorAll('.tab__content__container p');
+
+const tabBtn = document.querySelectorAll('.tab__header button');
 
 document.addEventListener('DOMContentLoaded', function() {
-    const firstTabWrap = document.querySelector('.tab__wrap');
     firstTabWrap.querySelector('.tab__content__container p').classList.add('active');
     firstTabWrap.querySelector('.tab__header button').classList.add('active');
 });
@@ -8,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelectorAll('.tab__header button').forEach(button => {
     button.addEventListener('click', function() {
         
-        document.querySelectorAll('.tab__content__container p').forEach(p => {
+        content.forEach(p => {
             p.classList.remove('active');
         });
 
-        document.querySelectorAll('.tab__header button').forEach(btn => {
+        tabBtn.forEach(btn => {
             btn.classList.remove('active');
         });
 
