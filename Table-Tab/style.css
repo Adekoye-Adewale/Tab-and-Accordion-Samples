@@ -11,6 +11,7 @@ body{
 }
 h1{
     text-align: center;
+    margin: 0;
 }
 a{
     color: #000;
@@ -26,7 +27,7 @@ button{
     border: solid 2px #204885;
     transition: all 250ms ease-in-out;
 }
-button:hover{
+button:hover, button.active{
     color: #fff;
     background-color: #204885;
 }
@@ -63,9 +64,15 @@ button:hover{
 .container__wrapper__no__js__sec {
     position: relative;
     top: 150px;
+    display: grid;
+    gap: 20px;
 }
-.tab__header input, .container__wrapper__no__js .tab__content__container{
+.tab__header input{
     display: none;
+}
+.container__wrapper__no__js .tab__content__container p{
+    opacity: 0;
+    transition: all 350ms ease-in-out;
 }
 .tab__header label{
     font-size: 1.2rem;
@@ -85,8 +92,8 @@ button:hover{
     color: #fff;
     background-color: #204885;
 }
-.container__wrapper__no__js .tab__wrap:has(input:checked) .tab__content__container{
-    display: flex;
+.container__wrapper__no__js .tab__wrap:has(input:checked) p{
+    opacity: 1;
 }
 
 /* =====================
@@ -99,6 +106,10 @@ button:hover{
     display: block;
     width: 100%;
 }
-.container__wrapper__js .tab__content__container p{
-    display: none;
+.container__wrapper__js p{
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+p.active{
+    opacity: 1;
 }
