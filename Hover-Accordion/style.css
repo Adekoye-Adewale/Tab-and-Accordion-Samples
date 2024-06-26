@@ -1,5 +1,5 @@
 :root{
-    --content-height: 90px;
+    --content-height: 80px;
 }
 *{
     min-width: 0;
@@ -8,6 +8,9 @@
 body{
     padding: 4rem 3.125%;
     font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
 }
 p, h1, h2, span{
     line-height: 150%;
@@ -26,12 +29,17 @@ p, h1, h2, span{
     gap: 10px;
     padding: 20px;
     border: solid 1px #222;
+    cursor: pointer;
 }
 .accordion__wrap:first-child{
     border-bottom: none;
 }
 .accordion__wrap:last-child{
     border-top: none;
+}
+.title{
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 .accordion__body{
     /* padding-top: 10px; */
@@ -41,5 +49,8 @@ p, h1, h2, span{
     transition: all 350ms ease-in-out;
 }
 .accordion__wrap:hover .accordion__body{
+    height: var(--content-height);
+}
+.container:not(:hover) .accordion__wrap:first-child .accordion__body{
     height: var(--content-height);
 }
